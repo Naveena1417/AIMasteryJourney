@@ -13,7 +13,7 @@ pipeline {
         stage('Run Tests') {
             steps {
                 echo 'Running pytest inside Docker image...'
-                sh 'docker run --rm ai-research-ml-crew:jenkins python -m pytest -v'
+                sh 'docker run --rm --network ai-ml-network ai-research-ml-crew:jenkins python -m pytest -v'
             }
         }
     }
