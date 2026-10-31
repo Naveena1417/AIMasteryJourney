@@ -1,0 +1,9 @@
+Python is a high-level programming language widely used in Artificial Intelligence, Machine Learning, Data Science and software development.
+
+Python provides libraries such as NumPy, Pandas, Matplotlib and Scikit-learn for data analysis and machine learning.
+
+PyTorch and TensorFlow are popular deep learning frameworks.
+
+Python is also commonly used to build APIs, automation scripts, data pipelines and AI applications.
+
+Streamlit is a Python framework that can be used to create interactive web applications for data science and machine learning projects.

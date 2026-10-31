@@ -1,0 +1,13 @@
+Machine Learning is a subset of Artificial Intelligence.
+
+Machine Learning allows computers to learn patterns from data without being explicitly programmed for every task.
+
+The three common types of machine learning are supervised learning, unsupervised learning and reinforcement learning.
+
+Supervised learning uses labeled data. Classification and regression are common supervised learning tasks.
+
+Unsupervised learning works with unlabeled data. Clustering is a common unsupervised learning technique.
+
+Regression predicts continuous numerical values. Classification predicts categories or classes.
+
+Common machine learning algorithms include Linear Regression, Logistic Regression, Decision Trees, Random Forest, Support Vector Machines, K-Nearest Neighbors and Gradient Boosting.

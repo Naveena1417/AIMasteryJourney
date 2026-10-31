@@ -1,0 +1,7 @@
+Artificial Intelligence is the field of computer science that focuses on creating systems that can perform tasks that normally require human intelligence.
+
+AI applications include natural language processing, computer vision, speech recognition, recommendation systems, robotics and autonomous systems.
+
+Machine learning is a major subfield of artificial intelligence. Machine learning systems learn patterns from data and use those patterns to make predictions or decisions.
+
+Generative AI is a type of artificial intelligence that can generate new content such as text, images, audio and code.

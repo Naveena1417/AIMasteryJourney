@@ -1,0 +1,13 @@
+streamlit
+huggingface_hub
+python-dotenv
+faiss-cpu
+rank-bm25
+pandas
+scikit-learn
+xgboost
+mlflow
+ollama
+torch==2.15.0+cpu
+--extra-index-url https://download.pytorch.org/whl/cpu
+sentence-transformers
