@@ -1,4 +1,5 @@
 import ollama
+import os
 
 
 MODEL_NAME = "qwen2.5:3b"
@@ -147,8 +148,10 @@ data
 OR
 ml
 """
-
-    response = ollama.chat(
+    client = ollama.Client(
+        host=os.getenv("OLLAMA_HOST", "http://localhost:11434")
+    )
+    response = client.chat(
         model=MODEL_NAME,
         messages=[
             {

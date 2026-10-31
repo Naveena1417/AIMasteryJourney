@@ -2,6 +2,7 @@ import ollama
 import pandas as pd
 import json
 import re
+import os
 
 
 
@@ -506,7 +507,11 @@ Do not add explanation outside JSON.
     # CALL OLLAMA
     # ========================================================
 
-    response = ollama.chat(
+    client = ollama.Client(
+        host=os.getenv("OLLAMA_HOST", "http://localhost:11434")
+    )
+
+    response = client.chat(
         model=MODEL_NAME,
         messages=[
             {
@@ -518,8 +523,6 @@ Do not add explanation outside JSON.
             "temperature": 0
         }
     )
-
-
     content = response["message"]["content"].strip()
 
 

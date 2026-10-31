@@ -1,4 +1,5 @@
 import ollama
+import os
 
 from rag.hybrid_retriever import (
     build_hybrid_retriever,
@@ -74,7 +75,11 @@ Rules:
   "The provided documents do not contain enough information to answer this question."
 """
 
-    response = ollama.chat(
+    client = ollama.Client(
+        host=os.getenv("OLLAMA_HOST", "http://localhost:11434")
+    )
+
+    response = client.chat(
         model=MODEL_NAME,
         messages=[
             {

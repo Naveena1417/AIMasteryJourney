@@ -1,6 +1,7 @@
 import pandas as pd
 import ollama
 import mlflow
+import os
 
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
@@ -14,7 +15,9 @@ from xgboost import XGBClassifier
 # MLFLOW CONFIGURATION
 # ============================================================
 
-mlflow.set_tracking_uri("http://mlflow-server:5000")
+mlflow.set_tracking_uri(
+    os.getenv("MLFLOW_TRACKING_URI", "http://localhost:5000")
+)
 
 mlflow.set_experiment("AI_Research_ML_Crew")
 
@@ -210,7 +213,9 @@ def train_classification_model(
             model,
             name="trained_model",
             skops_trusted_types=[
-                "sklearn.tree._tree.Tree"
+                "sklearn.tree._tree.Tree",
+                "xgboost.core.Booster",
+                "xgboost.sklearn.XGBClassifier"
             ]
         )
         # ----------------------------------------------------
@@ -301,8 +306,10 @@ Do not use markdown.
     # ========================================================
     # CALL OLLAMA
     # ========================================================
-
-    response = ollama.chat(
+    client = ollama.Client(
+        host=os.getenv("OLLAMA_HOST", "http://localhost:11434")
+    )
+    response = client.chat(
         model="qwen2.5:3b",
         messages=[
             {
